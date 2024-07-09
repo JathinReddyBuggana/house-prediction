@@ -23,6 +23,11 @@ neighbor = 1 if Neighborhood == "Rural" else 2 if Neighborhood == "Urban" else 3
 
 YearBuilt = st.number_input("Enter the number of year of constructin",min_value = 2023, max_value = 2060,step = 1)
 
-price = model.predict([[SquareFeet,Bedrooms,Bathrooms,neighbor,YearBuilt]])
 
-st.write("The price for the flat with given detailes is Rs.",price)
+if st.button("PREDICT PRICE"):
+    try:
+        price = model.predict([[SquareFeet, Bedrooms, Bathrooms, neighbor, YearBuilt]])
+        st.write("The price for the flat with given details is Rs.", price[0])
+    except Exception as e:
+        st.error("An error occurred during prediction:")
+        st.error(e)
