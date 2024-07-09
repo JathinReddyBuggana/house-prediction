@@ -8,10 +8,10 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 
-st.image(r"C:\Users\jathi\Downloads\ino_img.jpg")
+st.image("ino_img.jpg")
 
 st.title("HOUSE PRICE PREDICTION")
-model = pickle.load(open(r"C:\Users\jathi\machine learning folder\lr.pkl","rb"))
+model = pickle.load(open("lr.pkl","rb"))
  
 
 
